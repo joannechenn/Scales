@@ -1,3 +1,4 @@
+
 void setup() {
   size(500, 500);  //feel free to change the size
   noLoop(); //stops the draw() function from repeating
@@ -12,13 +13,13 @@ void scale(int x, int y) {
   noFill();
   int i = 0;
   int j = 0;
-  float c = 255;
-  while((i < 30) && (j < 30)){
+  float c = 0;
+  while((i < 35) && (j < 35)){
     stroke(c, 0, 0);
-    triangle(0 + i, 0, 37.5, 65 - j, 75 - i, 0);
+    triangle(0 + i, 0 + j, 37.5, 65 - j, 75 - i, 0 + j);
     i++;
     j++;
-    c -= 255/30.0;
+    c += 255/30.0;
   }
   
   //outside curve
