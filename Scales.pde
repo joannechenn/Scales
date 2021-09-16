@@ -1,4 +1,3 @@
-
 void setup() {
   size(500, 500);  //feel free to change the size
   noLoop(); //stops the draw() function from repeating
@@ -7,10 +6,20 @@ void setup() {
 
 
 void draw() {
-  for(int y = 500; y > -50; y -= 50){
-    for(int x = 0; x < 500; x += 78){
-        scale(x, y);
+  boolean shift = true;
+  for(int y = 500; y > -25; y -= 25)
+  {
+    for(int x = 0; x < 575; x += 75)
+    {
+       if(shift == true)
+          scale(x - 37, y);
+       else
+          scale(x, y - 15);
     }
+    if(shift == true)
+       shift = false;
+    else
+       shift = true;
   }
 }
 
@@ -24,7 +33,7 @@ void scale(int x, int y) {
   float c = 0;
   while((i < 33) && (j < 33)){
     stroke(c, 0, c);
-    triangle((0 + i) + x, (0 + j) + y, 37.5 + x, (65 - j) + y, (75 - i) + x, (0 + j) + y);
+    triangle(i + x, j + y, 37.5 + x, (65 - j) + y, (75 - i) + x, j + y);
     i++;
     j++;
     c += 255/33.0;
@@ -34,6 +43,6 @@ void scale(int x, int y) {
   strokeWeight(3);
   stroke(50);
   fill(0);
-  curve(55 + x, 5 + y, 0 + x, 0 + y, 37.5 + x, 65 + y, 130 + x, 40 + y);
-  curve(20 + x, 5 + y, 75 + x, 0 + y, 37.5 + x, 65 + y, -45 + x, 40 + y);
+  curve(55 + x, 5 + y, x, y, 37.5 + x, 65 + y, 130 + x, 40 + y);
+  curve(20 + x, 5 + y, 75 + x, y, 37.5 + x, 65 + y, -45 + x, 40 + y);
 }
