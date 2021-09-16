@@ -2,14 +2,19 @@
 void setup() {
   size(500, 500);  //feel free to change the size
   noLoop(); //stops the draw() function from repeating
+  background(150);
 }
-void draw() {
-  scale(0, 0);
-  scale(78, 0);
-  scale(100, 100);
-  scale(0, 435);
 
+
+void draw() {
+  for(int y = 500; y > -50; y -= 50){
+    for(int x = 0; x < 500; x += 78){
+        scale(x, y);
+    }
+  }
 }
+
+
 void scale(int x, int y) {
   //triangle w/ gradient
   strokeWeight(1);
