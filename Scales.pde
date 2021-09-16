@@ -5,6 +5,9 @@ void setup() {
 }
 void draw() {
   scale(0, 0);
+  scale(78, 0);
+  scale(100, 100);
+  scale(0, 435);
 
 }
 void scale(int x, int y) {
@@ -14,18 +17,18 @@ void scale(int x, int y) {
   int i = 0;
   int j = 0;
   float c = 0;
-  while((i < 35) && (j < 35)){
-    stroke(c, 0, 0);
-    triangle(0 + i, 0 + j, 37.5, 65 - j, 75 - i, 0 + j);
+  while((i < 33) && (j < 33)){
+    stroke(c, 0, c);
+    triangle((0 + i) + x, (0 + j) + y, 37.5 + x, (65 - j) + y, (75 - i) + x, (0 + j) + y);
     i++;
     j++;
-    c += 255/30.0;
+    c += 255/33.0;
   }
   
   //outside curve
   strokeWeight(3);
   stroke(50);
   fill(0);
-  curve(55, 5, 0, 0, 37.5, 65, 130, 40);
-  curve(20, 5, 75, 0, 37.5, 65, -45, 40);
+  curve(55 + x, 5 + y, 0 + x, 0 + y, 37.5 + x, 65 + y, 130 + x, 40 + y);
+  curve(20 + x, 5 + y, 75 + x, 0 + y, 37.5 + x, 65 + y, -45 + x, 40 + y);
 }
