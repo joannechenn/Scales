@@ -14,7 +14,7 @@ void draw() {
        if(shift == true)
           scale(x - 37, y);
        else
-          scale(x, y - 15);
+          scale(x, y - 12);
     }
     if(shift == true)
        shift = false;
@@ -32,7 +32,7 @@ void scale(int x, int y) {
   int j = 0;
   float c = 0;
   while((i < 33) && (j < 33)){
-    stroke(c, 0, c);
+    stroke(0, c, c);
     triangle(i + x, j + y, 37.5 + x, (65 - j) + y, (75 - i) + x, j + y);
     i++;
     j++;
