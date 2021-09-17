@@ -32,7 +32,7 @@ void scale(int x, int y) {
   int j = 0;
   float c = 0;
   while((i < 33) && (j < 33)){
-    c += 255/((float)(Math.random() * 95) + 10);
+    c += 255/((float)(Math.random() * 100) + 10);
     stroke(c, 0, c);
     triangle(i + x, j + y, 37.5 + x, (65 - j) + y, (75 - i) + x, j + y);
     i++;
@@ -40,8 +40,8 @@ void scale(int x, int y) {
   }
   
   //outside curve
-  strokeWeight(3);
-  stroke((int)(Math.random() * 65) + 45);
+  strokeWeight(2.5);
+  stroke((int)(Math.random() * 80) + 20);
   fill(0);
   curve(55 + x, 5 + y, x, y, 37.5 + x, 65 + y, 130 + x, 40 + y);
   curve(20 + x, 5 + y, 75 + x, y, 37.5 + x, 65 + y, -45 + x, 40 + y);
